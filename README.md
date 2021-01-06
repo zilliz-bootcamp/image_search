@@ -24,7 +24,7 @@ This demo uses the PASCAL VOC image set, which contains 17125 images with 20 cat
 
 Dataset size: ~ 2 GB.
 
-Download location: http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
+Download location: https://pan.baidu.com/s/1MjACqsGiLo3oiTMcxodtdA extraction code: v78m
 
 > Note: You can also use other images for testing. This system supports the following formats: .jpg and .png.
 
@@ -34,7 +34,7 @@ Download location: http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11
 
 #### 1. Run Milvus Docker
 
-This demo uses Milvus 0.10.0. Refer to the [Install Milvus](https://github.com/milvus-io/docs/blob/v0.10.0/site/en/guides/get_started/install_milvus/install_milvus.md) for how to run Milvus docker.
+This demo uses Milvus 0.10.0. Refer to the [Install Milvus](https://milvus.io/cn/docs/v0.10.0/cpu_milvus_docker.md) for how to run Milvus docker.
 
 #### 2. Run pic_search_webserver docker
 
