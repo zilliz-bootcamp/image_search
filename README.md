@@ -2,13 +2,13 @@
 
 This demo uses VGG, an image feature extraction model, and Milvus to build a system that can perform reverse image search.
 
-The system architecture is displayed as follows:
+Below is the system architecture:
 
 <img src="pic/demo.jpg" width = "450" height = "600" alt="system_arch" align=center />
 
 ### Environment requirements
 
-The following tables show recommended configurations for reverse image search. These configurations haven been tested.
+The following table shows the tested and recommended configurations for reverse image search system.
 
 
 | Component     | Recommended Configuration                                                    |
@@ -18,21 +18,21 @@ The following tables show recommended configurations for reverse image search. T
 | OS       | Ubuntu 18.04                                                 |
 | Software | Milvus 0.10.0<br />pic_search_webclient  0.2.0<br />pic_search_webserver 0.10.0 |
 
-### Data source
+### Source of data
 
-This demo uses the PASCAL VOC image set, which contains 17125 images with 20 categories: human; animals (birds, cats, cows, dogs, horses, sheep); transportation (planes, bikes,boats, buses, cars, motorcycles, trains); household (bottles, chairs, tables, pot plants, sofas, TVs)
+This demo uses PASCAL VOC image set, which contains 17125 images that can be divided into 20 categories: human, animals (birds, cats, cows, dogs, horses, sheep, and more), means of transport (planes, bikes,boats, buses, cars, motorcycles, trains, and more), furniture and household appliances (bottles, chairs, tables, potted plants, sofas, TVs, and more)
 
 Dataset size: ~ 2 GB.
 
-Download location: https://pan.baidu.com/s/1MjACqsGiLo3oiTMcxodtdA extraction code: v78m
+Url for download: https://pan.baidu.com/s/1MjACqsGiLo3oiTMcxodtdA extraction code: v78m
 
-> Note: You can also use other images for testing. This system supports the following formats: .jpg and .png.
+> Note: You can also use other images for testing. This system supports images in formats of .jpg and .png.
 
 ### How to deploy the system
 
 ### GPU method
 
-#### 1. Run Milvus Docker
+#### 1. Run Milvus docker
 
 This demo uses Milvus 0.10.0. Refer to the [Install Milvus](https://milvus.io/cn/docs/v0.10.0/cpu_milvus_docker.md) for how to run Milvus docker.
 
@@ -48,7 +48,7 @@ $ docker run -d --name zilliz_search_images_demo \
 milvusbootcamp/pic-search-webserver:0.10.0
 ```
 
-In the previous command, `IMAGE_PATH1` and `IMAGE_PATH2` specify the path where images are located. These locations are mapped to the docker container. After deployment, you can use `/tmp/pic1` and `/tmp/pic2` to load images. `MILVUS_HOST` specifies the IP address of the Milvus Docker host. Do not use backloop address "127.0.0.1". You do not have to modify other parts of the command.
+In the previous command line, `IMAGE_PATH1` and `IMAGE_PATH2` specify the paths where images are located. These locations are mapped to the docker container. After deployment, you can use `/tmp/pic1` and `/tmp/pic2` to load images. `MILVUS_HOST` specifies the IP address of the Milvus Docker host. Do not use loopback address "127.0.0.1". You do not have to modify other parts of the command line.
 
 #### 3. Run pic-search-webclient docker
 
@@ -58,7 +58,7 @@ $ docker run --name zilliz_search_images_demo_web -d --rm -p 8001:80 \
 milvusbootcamp/pic-search-webclient:0.2.0
 ```
 
-In the previous command, WEBSERVER_IP specifies the server IP address that runs pic-search-webserver docker.
+In the previous command line, WEBSERVER_IP specifies the server IP address that runs pic-search-webserver docker.
 
 ### How to perform reverse image search
 
@@ -70,15 +70,15 @@ Enter the path of an image folder in the pic_search_webserver docker container, 
 
 <img src="pic/web2.png" width = "650" height = "500" alt="arch" align=center />
 
-> Note: After clicking the Load button, it will take 1 to 2 seconds for the system to response. Please do not click again.
+> Note: After clicking the Load button, it will take 1 to 2 seconds for the system to response. Please do not make multiple clicks.
 
-The loading process may take several minutes. The following screenshot shows the interface with images loaded.
+It may take several minutes to load the images. The following screenshot shows the interface when image loading is successful.
 
 <img src="pic/web3.png" width = "650" height = "500" alt="arch" align=center />
 
-Select an image to search.
+Select the image you want to search for.
 
 <img src="pic/web5.png" width = "650" height = "500" alt="arch" align=center />
 
-It has been tested tha the system can complete reverse image search within 1 second using the recommended configuration. To load images in other directories of the pic_search_webserver docker, specify the path in the textbox.
+The system is tested and proved to be able to complete reverse image search within 1 second using the recommended configuration. To load images in other directories of the pic_search_webserver docker, specify the path in the textbox.
 
