@@ -1,3 +1,5 @@
+:exclamation::exclamation: **This repo will no longer be maintained, please visit https://github.com/milvus-io/bootcamp** :exclamation: :exclamation:
+
 # Reverse Image Search Based on Milvus and VGG
 
 This demo uses VGG, an image feature extraction model, and Milvus to build a system that can perform reverse image search.
